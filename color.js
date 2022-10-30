@@ -1,4 +1,5 @@
 const createBtn = document.getElementById("createBtn");
+const coords = document.getElementById("coords");
 const colorDiv = document.getElementById("colorDiv");
 
 function colorCreation() {
@@ -27,17 +28,21 @@ function numberOfColors() {
   console.log(colorArr);
   
   colorArr.forEach((color) => {
-    colorDiv.innerHTML += `<div id="colorBg" style = "margin: 10px auto;
-    padding: 20px;
-    width: 15px;
-    height: 15px;
+    colorDiv.innerHTML += `<div id="colorBg${color.colObj.i}" style = "margin: 10px auto;
+    padding: 10px;
+    width: 10px;
+    height: 10px;
     background-color: ${color.colObj.color};
-    border-radius: 50%;
-    align-self: center;"></div>`;
+    border-radius: 50%;"></div>`;
     // console.log(color.colObj.color);
   });
+  console.log(colorBg1.getBoundingClientRect().x)
 }
 
+document.addEventListener('mousemove',(e) => {
+  coords.innerHTML = `x : ${e.pageX} / y : ${e.pageY}`
+})
 createBtn.addEventListener("click", () => {
   numberOfColors();
 });
+
