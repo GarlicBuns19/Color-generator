@@ -9,9 +9,10 @@
 body{
     text-align: center;
 }
-#colorDiv{
+.colorDiv{
+    /* position: relative; */
     display: flex;
-    flex-flow: column;
+    flex-flow: row wrap;
     justify-content: space-between;
 }
 #createBtn{
